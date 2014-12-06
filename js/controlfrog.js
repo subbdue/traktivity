@@ -295,80 +295,80 @@ function createLineChart(obj){
 * Sparklines (cf-svmc-sparkline)
 *
 */
-//$(document).ready(function(){
-//	
-//	// Set up default options	
-//	window.cf_defaultSparkOpts = {};
-//	cf_defaultSparkOpts.fillColor = false;
-//	cf_defaultSparkOpts.lineColor = metric;
-//	cf_defaultSparkOpts.lineWidth = 1.5;
-//	cf_defaultSparkOpts.minSpotColor = false;
-//	cf_defaultSparkOpts.maxSpotColor = false;
-//	cf_defaultSparkOpts.spotRadius = 2.5;
-//	cf_defaultSparkOpts.highlightLineColor = metric;
-//	cf_defaultSparkOpts.spotColor = '#f8f77d';
-//	
-//	// Initialise sparklines
-//	/*
-//	*	Copy the each() function for each sparkline you have
-//	* 	e.g. $('#spark-1').each(function(){.....}
-//	*/	
-//	$('.sparkline').each(function(){
-//		
-//		/*
-//		// Set custom options and merge with default
-//		customSparkOptions = {};
-//		customSparkOptions.minSpotColor = true;
-//		var sparkOptions = cf_defaultSparkOpts;
-//		var sparkOptions = $.extend({}, cf_defaultSparkOpts, customSparkOptions);
-//		*/
-//		
-//		// No custom options
-//		var sparkOptions = cf_defaultSparkOpts;
-//			
-//		data = 	[2343,1765,2000,2453,2122,2333,2666,3000,2654,2322,2500,2700,2654,2456,2892,3292];
-//		createSparkline($(this), data, sparkOptions);
-//	});	
-//});
-//
-//function createSparkline(obj, data, sparkOptions){
-//	
-//	$(window).resize(generateSparkline);
-//	
-//	function generateSparkline(){
-//		var ww = $(window).width();
-//		var $obj = obj;			
-//		var $parent = $obj.parent().parent();
-//	
-//		// Current value
-//		$('.sparkline-value .metric-small', $parent).html(data[data.length-1]);
-//	
-//		// Sizing
-//		if(ww < 768){
-//			var cWidth = $parent.width();
-//			var slWidth = Math.floor(cWidth/3);
-//		}
-//		else{
-//			var svWidth = $('.sparkline-value', $parent).width();
-//			var cWidth = $parent.width();
-//			var slWidth = cWidth - svWidth - 20;
-//			var cHeight = $parent.parent().outerHeight() - 35;
-//			var svmHeight = $('.cf-svmc', $parent).height();
-//			var slHeight = cHeight - svmHeight;
-//			$('.sparkline-value', $parent).css({height:slHeight});
-//		}	
-//	
-//		// Options
-//		sparkOptions.width = slWidth;
-//		sparkOptions.height = slHeight;		
-//	
-//		// Create sparkline
-//		$obj.sparkline(data, sparkOptions);
-//	}
-//	
-//	// Call once on page load
-//	generateSparkline();
-//}
+$(document).ready(function(){
+	
+	// Set up default options	
+	window.cf_defaultSparkOpts = {};
+	cf_defaultSparkOpts.fillColor = false;
+	cf_defaultSparkOpts.lineColor = metric;
+	cf_defaultSparkOpts.lineWidth = 1.5;
+	cf_defaultSparkOpts.minSpotColor = false;
+	cf_defaultSparkOpts.maxSpotColor = false;
+	cf_defaultSparkOpts.spotRadius = 2.5;
+	cf_defaultSparkOpts.highlightLineColor = metric;
+	cf_defaultSparkOpts.spotColor = '#f8f77d';
+	
+	// Initialise sparklines
+	/*
+	*	Copy the each() function for each sparkline you have
+	* 	e.g. $('#spark-1').each(function(){.....}
+	*/	
+	$('.sparkline').each(function(){
+		
+		/*
+		// Set custom options and merge with default
+		customSparkOptions = {};
+		customSparkOptions.minSpotColor = true;
+		var sparkOptions = cf_defaultSparkOpts;
+		var sparkOptions = $.extend({}, cf_defaultSparkOpts, customSparkOptions);
+		*/
+		
+		// No custom options
+		var sparkOptions = cf_defaultSparkOpts;
+			
+		data = 	[2343,1765,2000,2453,2122,2333,2666,3000,2654,2322,2500,2700,2654,2456,2892,3292];
+		createSparkline($(this), data, sparkOptions);
+	});	
+});
+
+function createSparkline(obj, data, sparkOptions){
+	
+	$(window).resize(generateSparkline);
+	
+	function generateSparkline(){
+		var ww = $(window).width();
+		var $obj = obj;			
+		var $parent = $obj.parent().parent();
+	
+		// Current value
+		$('.sparkline-value .metric-small', $parent).html(data[data.length-1]);
+	
+		// Sizing
+		if(ww < 768){
+			var cWidth = $parent.width();
+			var slWidth = Math.floor(cWidth/3);
+		}
+		else{
+			var svWidth = $('.sparkline-value', $parent).width();
+			var cWidth = $parent.width();
+			var slWidth = cWidth - svWidth - 20;
+			var cHeight = $parent.parent().outerHeight() - 35;
+			var svmHeight = $('.cf-svmc', $parent).height();
+			var slHeight = cHeight - svmHeight;
+			$('.sparkline-value', $parent).css({height:slHeight});
+		}	
+	
+		// Options
+		sparkOptions.width = slWidth;
+		sparkOptions.height = slHeight;		
+	
+		// Create sparkline
+		$obj.sparkline(data, sparkOptions);
+	}
+	
+	// Call once on page load
+	generateSparkline();
+}
 
 
 /*
