@@ -474,23 +474,23 @@ $(document).ready(function(){
 * Funnel charts
 *
 */
-$(document).ready(function(){
-	/*
-	*	Copy the each() function for each Funnel chart you have
-	* 	e.g. $('#cf-funnel-1').each(function(){.....}
-	*/								
-
-	$('.cf-funnel').each(function(){
-	
-		// Dummy data for Funnel chart
-		funData = [3000,1500,500,250,10];
-		funLabels = ['Visits','Cart','Checkout','Purchase','Refund'];
-		funOptions = {barOpacity:true};
-		
-		cf_rFunnels[$(this).prop('id')] = new FunnelChart($(this).prop('id'), funData, funLabels, funOptions);
-	});
-	
-}); // end doc ready
+//$(document).ready(function(){
+//	/*
+//	*	Copy the each() function for each Funnel chart you have
+//	* 	e.g. $('#cf-funnel-1').each(function(){.....}
+//	*/								
+//
+//	$('.cf-funnel').each(function(){
+//	
+//		// Dummy data for Funnel chart
+//		funData = [3000,1500,500,250,10];
+//		funLabels = ['Visits','Cart','Checkout','Purchase','Refund'];
+//		funOptions = {barOpacity:true};
+//		
+//		cf_rFunnels[$(this).prop('id')] = new FunnelChart($(this).prop('id'), funData, funLabels, funOptions);
+//	});
+//	
+//}); // end doc ready
 
 
 
