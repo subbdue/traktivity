@@ -291,7 +291,7 @@ function createLineChart(obj){
 
 
 /*
-*
+* SG
 * Sparklines (cf-svmc-sparkline)
 *
 */
