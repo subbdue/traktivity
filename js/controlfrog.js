@@ -330,45 +330,45 @@ function createLineChart(obj){
 //		createSparkline($(this), data, sparkOptions);
 //	});	
 //});
-
-function createSparkline(obj, data, sparkOptions){
-	
-	$(window).resize(generateSparkline);
-	
-	function generateSparkline(){
-		var ww = $(window).width();
-		var $obj = obj;			
-		var $parent = $obj.parent().parent();
-	
-		// Current value
-		$('.sparkline-value .metric-small', $parent).html(data[data.length-1]);
-	
-		// Sizing
-		if(ww < 768){
-			var cWidth = $parent.width();
-			var slWidth = Math.floor(cWidth/3);
-		}
-		else{
-			var svWidth = $('.sparkline-value', $parent).width();
-			var cWidth = $parent.width();
-			var slWidth = cWidth - svWidth - 20;
-			var cHeight = $parent.parent().outerHeight() - 35;
-			var svmHeight = $('.cf-svmc', $parent).height();
-			var slHeight = cHeight - svmHeight;
-			$('.sparkline-value', $parent).css({height:slHeight});
-		}	
-	
-		// Options
-		sparkOptions.width = slWidth;
-		sparkOptions.height = slHeight;		
-	
-		// Create sparkline
-		$obj.sparkline(data, sparkOptions);
-	}
-	
-	// Call once on page load
-	generateSparkline();
-}
+//
+//function createSparkline(obj, data, sparkOptions){
+//	
+//	$(window).resize(generateSparkline);
+//	
+//	function generateSparkline(){
+//		var ww = $(window).width();
+//		var $obj = obj;			
+//		var $parent = $obj.parent().parent();
+//	
+//		// Current value
+//		$('.sparkline-value .metric-small', $parent).html(data[data.length-1]);
+//	
+//		// Sizing
+//		if(ww < 768){
+//			var cWidth = $parent.width();
+//			var slWidth = Math.floor(cWidth/3);
+//		}
+//		else{
+//			var svWidth = $('.sparkline-value', $parent).width();
+//			var cWidth = $parent.width();
+//			var slWidth = cWidth - svWidth - 20;
+//			var cHeight = $parent.parent().outerHeight() - 35;
+//			var svmHeight = $('.cf-svmc', $parent).height();
+//			var slHeight = cHeight - svmHeight;
+//			$('.sparkline-value', $parent).css({height:slHeight});
+//		}	
+//	
+//		// Options
+//		sparkOptions.width = slWidth;
+//		sparkOptions.height = slHeight;		
+//	
+//		// Create sparkline
+//		$obj.sparkline(data, sparkOptions);
+//	}
+//	
+//	// Call once on page load
+//	generateSparkline();
+//}
 
 
 /*
