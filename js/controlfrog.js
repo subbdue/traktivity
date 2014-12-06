@@ -106,7 +106,7 @@ $(document).ready(function(){
 			{
 				value : 30,
 				color : pieSegColors[3],
-				label: 'Label 1'
+				label: 'Running'
 			},
 			{
 				value : 50,
@@ -295,41 +295,41 @@ function createLineChart(obj){
 * Sparklines (cf-svmc-sparkline)
 *
 */
-$(document).ready(function(){
-	
-	// Set up default options	
-	window.cf_defaultSparkOpts = {};
-	cf_defaultSparkOpts.fillColor = false;
-	cf_defaultSparkOpts.lineColor = metric;
-	cf_defaultSparkOpts.lineWidth = 1.5;
-	cf_defaultSparkOpts.minSpotColor = false;
-	cf_defaultSparkOpts.maxSpotColor = false;
-	cf_defaultSparkOpts.spotRadius = 2.5;
-	cf_defaultSparkOpts.highlightLineColor = metric;
-	cf_defaultSparkOpts.spotColor = '#f8f77d';
-	
-	// Initialise sparklines
-	/*
-	*	Copy the each() function for each sparkline you have
-	* 	e.g. $('#spark-1').each(function(){.....}
-	*/	
-	$('.sparkline').each(function(){
-		
-		/*
-		// Set custom options and merge with default
-		customSparkOptions = {};
-		customSparkOptions.minSpotColor = true;
-		var sparkOptions = cf_defaultSparkOpts;
-		var sparkOptions = $.extend({}, cf_defaultSparkOpts, customSparkOptions);
-		*/
-		
-		// No custom options
-		var sparkOptions = cf_defaultSparkOpts;
-			
-		data = 	[2343,1765,2000,2453,2122,2333,2666,3000,2654,2322,2500,2700,2654,2456,2892,3292];
-		createSparkline($(this), data, sparkOptions);
-	});	
-});
+//$(document).ready(function(){
+//	
+//	// Set up default options	
+//	window.cf_defaultSparkOpts = {};
+//	cf_defaultSparkOpts.fillColor = false;
+//	cf_defaultSparkOpts.lineColor = metric;
+//	cf_defaultSparkOpts.lineWidth = 1.5;
+//	cf_defaultSparkOpts.minSpotColor = false;
+//	cf_defaultSparkOpts.maxSpotColor = false;
+//	cf_defaultSparkOpts.spotRadius = 2.5;
+//	cf_defaultSparkOpts.highlightLineColor = metric;
+//	cf_defaultSparkOpts.spotColor = '#f8f77d';
+//	
+//	// Initialise sparklines
+//	/*
+//	*	Copy the each() function for each sparkline you have
+//	* 	e.g. $('#spark-1').each(function(){.....}
+//	*/	
+//	$('.sparkline').each(function(){
+//		
+//		/*
+//		// Set custom options and merge with default
+//		customSparkOptions = {};
+//		customSparkOptions.minSpotColor = true;
+//		var sparkOptions = cf_defaultSparkOpts;
+//		var sparkOptions = $.extend({}, cf_defaultSparkOpts, customSparkOptions);
+//		*/
+//		
+//		// No custom options
+//		var sparkOptions = cf_defaultSparkOpts;
+//			
+//		data = 	[2343,1765,2000,2453,2122,2333,2666,3000,2654,2322,2500,2700,2654,2456,2892,3292];
+//		createSparkline($(this), data, sparkOptions);
+//	});	
+//});
 
 function createSparkline(obj, data, sparkOptions){
 	
